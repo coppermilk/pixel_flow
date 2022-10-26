@@ -1,1 +1,0 @@
-/usr/bin/c++ -g -g CMakeFiles/Google_Tests_run.dir/test.cpp.o -o Google_Tests_run  ../src/libpixel_flow_lib.a ../lib/libgtest.a ../lib/libgtest_main.a ../lib/libgtest.a 

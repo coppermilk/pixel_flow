@@ -1,2 +1,0 @@
-/usr/bin/ar qc libGoogleTestsExample_lib.a CMakeFiles/GoogleTestsExample_lib.dir/ExampleClass.cpp.o CMakeFiles/GoogleTestsExample_lib.dir/Board.cc.o CMakeFiles/GoogleTestsExample_lib.dir/Pixel.cc.o
-/usr/bin/ranlib libGoogleTestsExample_lib.a

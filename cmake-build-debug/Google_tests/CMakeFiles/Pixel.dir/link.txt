@@ -1,1 +1,0 @@
-/usr/bin/c++ -g -g CMakeFiles/Pixel.dir/Pixel.cpp.o -o Pixel 

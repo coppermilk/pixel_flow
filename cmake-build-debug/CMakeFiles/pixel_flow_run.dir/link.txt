@@ -1,1 +1,0 @@
-/usr/bin/c++ -g -g CMakeFiles/pixel_flow_run.dir/main.cpp.o -o pixel_flow_run  src/libpixel_flow_lib.a 
