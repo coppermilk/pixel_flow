@@ -1,0 +1,2 @@
+/usr/bin/ar qc libpixel_flow_lib.a CMakeFiles/pixel_flow_lib.dir/ExampleClass.cpp.o CMakeFiles/pixel_flow_lib.dir/Board.cc.o CMakeFiles/pixel_flow_lib.dir/Pixel.cc.o CMakeFiles/pixel_flow_lib.dir/Activity.cc.o
+/usr/bin/ranlib libpixel_flow_lib.a
