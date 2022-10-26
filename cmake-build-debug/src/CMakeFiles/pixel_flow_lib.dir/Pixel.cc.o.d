@@ -1,8 +1,6 @@
 src/CMakeFiles/pixel_flow_lib.dir/Pixel.cc.o: \
- /home/zvgdb/Clion-GoogleTest-Starter/src/Pixel.cc \
- /usr/include/stdc-predef.h \
- /home/zvgdb/Clion-GoogleTest-Starter/src/Pixel.h \
- /usr/include/c++/11/cstdint \
+ /home/zvgdb/iot/pixel_flow/src/Pixel.cc /usr/include/stdc-predef.h \
+ /home/zvgdb/iot/pixel_flow/src/Pixel.h /usr/include/c++/11/cstdint \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \

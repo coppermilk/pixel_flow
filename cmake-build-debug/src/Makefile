@@ -223,29 +223,53 @@ Board.cc.s:
 	cd /home/zvgdb/iot/pixel_flow/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/pixel_flow_lib.dir/build.make src/CMakeFiles/pixel_flow_lib.dir/Board.cc.s
 .PHONY : Board.cc.s
 
-ExampleClass.o: ExampleClass.cpp.o
-.PHONY : ExampleClass.o
+ControllerBoard.o: ControllerBoard.cc.o
+.PHONY : ControllerBoard.o
 
 # target to build an object file
-ExampleClass.cpp.o:
-	cd /home/zvgdb/iot/pixel_flow/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/pixel_flow_lib.dir/build.make src/CMakeFiles/pixel_flow_lib.dir/ExampleClass.cpp.o
-.PHONY : ExampleClass.cpp.o
+ControllerBoard.cc.o:
+	cd /home/zvgdb/iot/pixel_flow/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/pixel_flow_lib.dir/build.make src/CMakeFiles/pixel_flow_lib.dir/ControllerBoard.cc.o
+.PHONY : ControllerBoard.cc.o
 
-ExampleClass.i: ExampleClass.cpp.i
-.PHONY : ExampleClass.i
+ControllerBoard.i: ControllerBoard.cc.i
+.PHONY : ControllerBoard.i
 
 # target to preprocess a source file
-ExampleClass.cpp.i:
-	cd /home/zvgdb/iot/pixel_flow/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/pixel_flow_lib.dir/build.make src/CMakeFiles/pixel_flow_lib.dir/ExampleClass.cpp.i
-.PHONY : ExampleClass.cpp.i
+ControllerBoard.cc.i:
+	cd /home/zvgdb/iot/pixel_flow/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/pixel_flow_lib.dir/build.make src/CMakeFiles/pixel_flow_lib.dir/ControllerBoard.cc.i
+.PHONY : ControllerBoard.cc.i
 
-ExampleClass.s: ExampleClass.cpp.s
-.PHONY : ExampleClass.s
+ControllerBoard.s: ControllerBoard.cc.s
+.PHONY : ControllerBoard.s
 
 # target to generate assembly for a file
-ExampleClass.cpp.s:
-	cd /home/zvgdb/iot/pixel_flow/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/pixel_flow_lib.dir/build.make src/CMakeFiles/pixel_flow_lib.dir/ExampleClass.cpp.s
-.PHONY : ExampleClass.cpp.s
+ControllerBoard.cc.s:
+	cd /home/zvgdb/iot/pixel_flow/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/pixel_flow_lib.dir/build.make src/CMakeFiles/pixel_flow_lib.dir/ControllerBoard.cc.s
+.PHONY : ControllerBoard.cc.s
+
+CsvParser.o: CsvParser.cc.o
+.PHONY : CsvParser.o
+
+# target to build an object file
+CsvParser.cc.o:
+	cd /home/zvgdb/iot/pixel_flow/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/pixel_flow_lib.dir/build.make src/CMakeFiles/pixel_flow_lib.dir/CsvParser.cc.o
+.PHONY : CsvParser.cc.o
+
+CsvParser.i: CsvParser.cc.i
+.PHONY : CsvParser.i
+
+# target to preprocess a source file
+CsvParser.cc.i:
+	cd /home/zvgdb/iot/pixel_flow/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/pixel_flow_lib.dir/build.make src/CMakeFiles/pixel_flow_lib.dir/CsvParser.cc.i
+.PHONY : CsvParser.cc.i
+
+CsvParser.s: CsvParser.cc.s
+.PHONY : CsvParser.s
+
+# target to generate assembly for a file
+CsvParser.cc.s:
+	cd /home/zvgdb/iot/pixel_flow/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/pixel_flow_lib.dir/build.make src/CMakeFiles/pixel_flow_lib.dir/CsvParser.cc.s
+.PHONY : CsvParser.cc.s
 
 Pixel.o: Pixel.cc.o
 .PHONY : Pixel.o
@@ -290,9 +314,12 @@ help:
 	@echo "... Board.o"
 	@echo "... Board.i"
 	@echo "... Board.s"
-	@echo "... ExampleClass.o"
-	@echo "... ExampleClass.i"
-	@echo "... ExampleClass.s"
+	@echo "... ControllerBoard.o"
+	@echo "... ControllerBoard.i"
+	@echo "... ControllerBoard.s"
+	@echo "... CsvParser.o"
+	@echo "... CsvParser.i"
+	@echo "... CsvParser.s"
 	@echo "... Pixel.o"
 	@echo "... Pixel.i"
 	@echo "... Pixel.s"

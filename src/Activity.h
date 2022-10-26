@@ -2,6 +2,7 @@
 #define PIXEL_FLOW_SRC_ACTIVITY_H
 
 #include <string>
+#include <boost/date_time/gregorian/greg_date.hpp>
 
 /**
 * @brief A class that represents an activity.
@@ -10,6 +11,7 @@ class Activity
 {
 private:
 
+	boost::gregorian::date date;
 	/**
 	* @brief A variable that stores the type of the activity.
 	*/

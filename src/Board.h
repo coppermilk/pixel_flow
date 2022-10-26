@@ -121,6 +121,9 @@ public:
  	*/
 	void show_in_cell_mode();
 
+	uint8_t get_height() const;
+
+	uint8_t get_width() const;
 };
 
 #endif //PIXEL_FLOW_SRC_BOARD_H

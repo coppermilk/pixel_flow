@@ -458,10 +458,16 @@
 		<Unit filename="/home/zvgdb/iot/pixel_flow/src/Board.h">
 			<Option target="pixel_flow_lib"/>
 		</Unit>
-		<Unit filename="/home/zvgdb/iot/pixel_flow/src/ExampleClass.cpp">
+		<Unit filename="/home/zvgdb/iot/pixel_flow/src/ControllerBoard.cc">
 			<Option target="pixel_flow_lib"/>
 		</Unit>
-		<Unit filename="/home/zvgdb/iot/pixel_flow/src/ExampleClass.h">
+		<Unit filename="/home/zvgdb/iot/pixel_flow/src/ControllerBoard.h">
+			<Option target="pixel_flow_lib"/>
+		</Unit>
+		<Unit filename="/home/zvgdb/iot/pixel_flow/src/CsvParser.cc">
+			<Option target="pixel_flow_lib"/>
+		</Unit>
+		<Unit filename="/home/zvgdb/iot/pixel_flow/src/CsvParser.h">
 			<Option target="pixel_flow_lib"/>
 		</Unit>
 		<Unit filename="/home/zvgdb/iot/pixel_flow/src/Pixel.cc">
@@ -471,6 +477,9 @@
 			<Option target="pixel_flow_lib"/>
 		</Unit>
 		<Unit filename="/home/zvgdb/iot/pixel_flow/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/zvgdb/iot/pixel_flow/out.csv">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 		<Unit filename="/home/zvgdb/iot/pixel_flow/Google_tests/CMakeLists.txt">

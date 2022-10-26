@@ -11,7 +11,10 @@ add_executable(${CMAKE_PROJECT_NAME}_run main.cpp)
 set(CMAKE_CXX_FLAGS "-g")
 
 # ---------------
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/out.csv
+        ${CMAKE_CURRENT_BINARY_DIR} COPYONLY)
 # ---------------
+
 include_directories(src)
 add_subdirectory(src)
 

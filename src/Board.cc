@@ -39,7 +39,6 @@ void Board::set_pixel(uint16_t i, uint8_t rbg)
 }
 
 
-
 std::string Board::get_pixel_data(uint8_t x, uint8_t y)
 {
 	// Returning a string of the RGB values of the pixel at the given x and y coordinates.
@@ -66,7 +65,6 @@ void Board::show_in_row_mode()
 	}
 }
 
-
 void Board::show_in_cell_mode()
 {
 	// This is printing out the board in cell mode.
@@ -81,3 +79,14 @@ void Board::show_in_cell_mode()
 		std::cout << std::endl;
 	}
 }
+
+uint8_t Board::get_height() const
+{
+	return height;
+}
+
+uint8_t Board::get_width() const
+{
+	return width;
+}
+

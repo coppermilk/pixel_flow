@@ -127,6 +127,9 @@
 		<Unit filename="/home/zvgdb/iot/pixel_flow/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
+		<Unit filename="/home/zvgdb/iot/pixel_flow/out.csv">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
 		<Unit filename="/home/zvgdb/iot/pixel_flow/Google_tests/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\Google_tests\"/>
 		</Unit>
