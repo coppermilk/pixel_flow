@@ -1,63 +1,51 @@
-//
-// Created by zvgdb on 26.10.22.
-//
-
 #include "ControllerBoard.h"
 
-ControllerBoard::ControllerBoard(Board* pBoard, ControllerBoard::Mode mode)
-{
-	this->pBoard = pBoard;
-	if (mode == Mode::DEBUG)
-	{
-		debug_shuffle(pBoard);
-	}
+ControllerBoard::ControllerBoard(Board *pBoard, ControllerBoard::Mode mode) {
+  this->pBoard = pBoard;
+  if (mode == Mode::DEBUG) {
+    debug_shuffle(pBoard);
+  }
 }
 
-void ControllerBoard::debug_shuffle(Board* pBoard)
-{
-	for (int i = pBoard->size(); i > 0; i--)
-	{
-		pBoard->set_pixel(pBoard->size() - i, i - 1);
-	}
+void ControllerBoard::debug_shuffle(Board *pBoard) {
+  for (int i = pBoard->size(); i > 0; i--) {
+    pBoard->set_pixel(pBoard->size() - i, i - 1);
+  }
 }
 
-ControllerBoard::ControllerBoard(Board* pBoard)
-{
-	this->pBoard = pBoard;
+ControllerBoard::ControllerBoard(Board *pBoard) {
+  this->pBoard = pBoard;
 }
 
-void ControllerBoard::set_mode_activity(const Data& activities, const std::string& type, bool is_need_days_of_week_offset) const
-{
-	using namespace boost::gregorian;
-	using namespace boost::posix_time;
+void ControllerBoard::set_mode_activity(const Data &activities, const std::string &type,
+                                        bool is_need_days_of_week_offset) const {
+  using namespace boost::gregorian;
+  using namespace boost::posix_time;
 
-	date today = second_clock::local_time().date();
-	date last_day_than_can_be_show_in_board = today - days(pBoard->size());
-	long day_of_week_offset = today.day_of_week();
+  date today = second_clock::local_time().date();
+  date last_day_than_can_be_show_in_board = today - days(pBoard->size());
+  long day_of_week_offset = today.day_of_week();
 
-	pBoard->reset_all_pixel();
+  pBoard->reset_all_pixel();
 
-	for (auto& type_activity : activities.data)
-	{
-		if (type_activity.first == type)
-		{
-			for (auto& days_and_score : type_activity.second)
-			{
-				if ((last_day_than_can_be_show_in_board <= days_and_score.first)  && (days_and_score.first <= today))
-				{
-					date_period dp = { days_and_score.first, today };
-					long day_offset_from_today = dp.length().days();
-					if(is_need_days_of_week_offset){
-						pBoard->set_pixel(pBoard->size() - day_offset_from_today - (7 - day_of_week_offset), days_and_score.second);
-					}else{
-						pBoard->set_pixel(pBoard->size() - day_offset_from_today - 1, days_and_score.second);
-					}
-				}
-			}
-			break;
-		}
-	}
-    BOOST_LOG_TRIVIAL(info) << "Set mode activity: \'" + type +"\'.";
+  for (auto &type_activity : activities.data) {
+    if (type_activity.first == type) {
+      for (auto &days_and_score : type_activity.second) {
+        if ((last_day_than_can_be_show_in_board <= days_and_score.first) && (days_and_score.first <= today)) {
+          date_period dp = {days_and_score.first, today};
+          long day_offset_from_today = dp.length().days();
+          if (is_need_days_of_week_offset) {
+            pBoard->set_pixel(pBoard->size() - day_offset_from_today - (7 - day_of_week_offset),
+                              days_and_score.second);
+          } else {
+            pBoard->set_pixel(pBoard->size() - day_offset_from_today - 1, days_and_score.second);
+          }
+        }
+      }
+      break;
+    }
+  }
+  BOOST_LOG_TRIVIAL(info) << "Set mode activity: \'" + type + "\'.";
 }
 
 

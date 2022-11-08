@@ -13,23 +13,22 @@
 // pip install bs4==0.0.1
 // pip install pandas==1.5.1
 
-int main()
-{
+int main() {
 
-	GitHubDataExporter::to_csv("coppermilk", "github.csv");
-	GoogleSheetsDataExporter::to_csv("1axA_i8GiCK1V7aQCcK4O5IPsjpGNsiAayjn7zziXpgA", "db", "googlesheets.csv");
+  GitHubDataExporter::to_csv("coppermilk", "github.csv");
+  GoogleSheetsDataExporter::to_csv("1axA_i8GiCK1V7aQCcK4O5IPsjpGNsiAayjn7zziXpgA", "db", "googlesheets.csv");
 
-    Data data;
-	data.update_data_from_csv("googlesheets.csv");
-	data.update_data_from_csv("github.csv");
-	Board board(56, 7);
-	ControllerBoard controller_board(&board);
+  Data data;
+  data.update_data_from_csv("googlesheets.csv");
+  data.update_data_from_csv("github.csv");
+  Board board(56, 7);
+  ControllerBoard controller_board(&board);
 
-    auto types = Data::get_activity_types(&data);
-	for(const auto& type : types){
-        controller_board.set_mode_activity(data, type);
-        board.show_in_cell_mode();
-    }
+  auto types = Data::get_activity_types(&data);
+  for (const auto &type : types) {
+    controller_board.set_mode_activity(data, type);
+    board.show_in_cell_mode();
+  }
 
-	return 0;
+  return 0;
 }

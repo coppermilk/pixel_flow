@@ -12,29 +12,26 @@ using std::map;
 using std::string;
 using boost::gregorian::date;
 
-class ControllerBoard
-{
+class ControllerBoard {
 
-public:
-	enum class Mode
-	{
-		DEBUG, ACTIVITY
-	};
+ public:
+  enum class Mode {
+    DEBUG, ACTIVITY
+  };
 
-	enum class setting{
-		NUMBER_BRIGHTNESS_LEVELS = 8
-	};
-	ControllerBoard(Board* pBoard, ControllerBoard::Mode mode);
+  enum class setting {
+    NUMBER_BRIGHTNESS_LEVELS = 8
+  };
 
-	explicit ControllerBoard(Board* pBoard);
+  ControllerBoard(Board *pBoard, ControllerBoard::Mode mode);
 
-	static void debug_shuffle(Board* pBoard);
+  explicit ControllerBoard(Board *pBoard);
 
-	void set_mode_activity(const Data& activities_data, const std::string& type, bool days_of_week_offset = true) const;
+  static void debug_shuffle(Board *pBoard);
 
+  void set_mode_activity(const Data &activities_data, const std::string &type, bool days_of_week_offset = true) const;
 
-	Board* pBoard;
+  Board *pBoard;
 };
-
 
 #endif //PIXEL_FLOW_SRC_CONTROLLERBOARD_H
