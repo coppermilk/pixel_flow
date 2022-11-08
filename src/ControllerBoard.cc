@@ -57,6 +57,7 @@ void ControllerBoard::set_mode_activity(const Data& activities, const std::strin
 			break;
 		}
 	}
+    BOOST_LOG_TRIVIAL(info) << "Set mode activity: \'" + type +"\'.";
 }
 
 

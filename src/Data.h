@@ -24,13 +24,12 @@ private:
 
 	static std::vector<std::vector<std::string>> get_activity_raw_data_lines(std::ifstream* file);
 	static std::vector<std::string> get_activity_header_types(std::ifstream* file);
-	void csv_file_preparation();
+
 public:
 	map<string, map<date, int>> * p_data_from_csv;
 	map<string, map<date, int>> data;
-	//map<string, map<date, int>> data_from_csv_clear();
-
 	map<string, map<date, int>> update_data_from_csv(const string &file_name);
+    static std::vector<std::string> get_activity_types(Data * p_data);
 };
 
 

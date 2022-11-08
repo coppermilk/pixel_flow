@@ -25,13 +25,16 @@ int main()
     Data data;
 	data.update_data_from_csv("googlesheets.csv");
 	data.update_data_from_csv("github.csv");
-	Board board(8, 8);
-	ControllerBoard controller_board(&board);
 
-	board.show_in_cell_mode();
-	std::string type = "github";
-	controller_board.set_mode_activity(data, type);
-	board.show_in_cell_mode();
+	Board board(56, 7);
+	ControllerBoard controller_board(&board);
+    auto types = Data::get_activity_types(&data);
+	for(const auto& type : types){
+        controller_board.set_mode_activity(data, type);
+        board.show_in_cell_mode();
+    }
+
+
 	return 0;
 }
 

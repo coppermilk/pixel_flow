@@ -40,7 +40,6 @@ map<string, map<date, int>> Data::update_data_from_csv(const string &file_name)
 			BOOST_LOG_TRIVIAL(error) << ex.what();
 		}
 
-
 	}
 	file.clear();
 	file.seekg(0, std::ios::beg);
@@ -98,4 +97,12 @@ std::vector<std::vector<std::string>> Data::get_activity_raw_data_lines(std::ifs
 	// back to the start!
 	(*file).seekg(0, std::ios::beg);
 	return raw_data;
+}
+
+std::vector<std::string> Data::get_activity_types(Data *p_data) {
+    std::vector<std::string> activity_types;
+    for(const auto& d : p_data->data){
+        activity_types.push_back(d.first);
+    }
+    return activity_types;
 }

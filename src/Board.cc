@@ -70,6 +70,7 @@ void Board::show_in_row_mode()
 void Board::show_in_cell_mode()
 {
 	// This is printing out the board in cell mode.
+    BOOST_LOG_TRIVIAL(info) << "Board show in cell mode.";
 	for (uint8_t h = 0; h < height; ++h)
 	{
 		std::string row;
@@ -85,7 +86,7 @@ void Board::show_in_cell_mode()
 		BOOST_LOG_TRIVIAL(debug) << row;
 		row.clear();
 	}
-	BOOST_LOG_TRIVIAL(info) << "Board show in cell mode.";
+
 }
 
 uint8_t Board::get_height() const
