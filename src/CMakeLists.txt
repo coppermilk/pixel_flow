@@ -3,10 +3,8 @@ set(SOURCES
         Pixel.cc
         Activity.cc
         ControllerBoard.cc
-        CsvDataParser.cc
         GoogleSheetsDataExporter.cc
         GitHubDataExporter.cc
-        CsvDataParser2.cc
         Data.cc
         )
 
@@ -16,8 +14,6 @@ set(HEADERS
         Pixel.h
         Activity.h
         ControllerBoard.h
-        CsvDataParser.h
-        CsvDataParser2.h
         GoogleSheetsDataExporter.h
         GitHubDataExporter.h
         Data.h
