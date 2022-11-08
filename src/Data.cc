@@ -67,6 +67,7 @@ std::vector<std::string> Data::get_activity_header_types(std::ifstream* file)
 
 }
 
+
 std::vector<std::vector<std::string>> Data::get_activity_raw_data_lines(std::ifstream* file)
 {
 	// back to the start!
