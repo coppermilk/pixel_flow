@@ -1,8 +1,8 @@
 #ifndef PIXEL_FLOW_SRC_ACTIVITY_H
 #define PIXEL_FLOW_SRC_ACTIVITY_H
 
-#include <string>
 #include <boost/date_time/gregorian/greg_date.hpp>
+#include <string>
 
 /**
 * @brief A class that represents an activity.

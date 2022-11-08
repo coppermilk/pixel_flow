@@ -1,12 +1,8 @@
-//
-// Created by zvgdb on 27.10.22.
-//
-
 #ifndef PIXEL_FLOW_SRC_GITHUBDATAEXPORTER_H
 #define PIXEL_FLOW_SRC_GITHUBDATAEXPORTER_H
 
-#include <boost/log/trivial.hpp>
 #include <Python.h>
+#include <boost/log/trivial.hpp>
 #include <string>
 
 class GitHubDataExporter

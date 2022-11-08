@@ -1,17 +1,17 @@
 #include "Board.h"
 #include "ControllerBoard.h"
-#include "GoogleSheetsDataExporter.h"
-#include "GitHubDataExporter.h"
 #include "Data.h"
-
+#include "GitHubDataExporter.h"
+#include "GoogleSheetsDataExporter.h"
 
 // sudo apt install build-essential
 // sudo apt-get install python3-dev
 // sudo apt-get install libboost-all-dev
 // sudo apt install python3-pip
-// pip install requests
-// pip install bs4
-// pip install pandas
+
+// pip install requests==2.28.1
+// pip install bs4==0.0.1
+// pip install pandas==1.5.1
 
 int main()
 {
@@ -22,7 +22,6 @@ int main()
     Data data;
 	data.update_data_from_csv("googlesheets.csv");
 	data.update_data_from_csv("github.csv");
-
 	Board board(56, 7);
 	ControllerBoard controller_board(&board);
 
@@ -32,7 +31,5 @@ int main()
         board.show_in_cell_mode();
     }
 
-
 	return 0;
 }
-

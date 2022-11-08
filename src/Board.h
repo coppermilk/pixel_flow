@@ -1,12 +1,12 @@
 #ifndef PIXEL_FLOW_SRC_BOARD_H
 #define PIXEL_FLOW_SRC_BOARD_H
 
+#include "Pixel.h"
+#include <boost/circular_buffer.hpp>
+#include <boost/format.hpp>
+#include <boost/log/trivial.hpp>
 #include <cstdint>
 #include <iostream>
-#include <boost/format.hpp>
-#include <boost/circular_buffer.hpp>
-#include "Pixel.h"
-#include <boost/log/trivial.hpp>
 
 /**
  * @brief Board class used for pixel matrix manipulation.
@@ -43,10 +43,6 @@ private:
  	* Allowable range is [0, 65536).
  	*/
 	uint16_t board_size;
-
-
-
-
 
 public:
 	/**
