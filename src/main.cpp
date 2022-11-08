@@ -5,7 +5,9 @@
 #include "GitHubDataExporter.h"
 #include "Data.h"
 #include <thread>
-
+//sudo apt install gcc
+// sudo apt install build-essential
+// sudo apt-get install python3-dev
 int main()
 {
 	Data data;
