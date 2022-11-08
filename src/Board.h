@@ -122,9 +122,9 @@ class Board {
    */
   void show_in_cell_mode();
 
-  uint8_t get_height() const;
+  [[nodiscard]] uint8_t get_height() const;
 
-  uint8_t get_width() const;
+  [[nodiscard]] uint8_t get_width() const;
 
   void reset_all_pixel();
 

@@ -15,13 +15,23 @@
 
 int main() {
 
-  GitHubDataExporter::to_csv("coppermilk", "github.csv");
-  GoogleSheetsDataExporter::to_csv("1axA_i8GiCK1V7aQCcK4O5IPsjpGNsiAayjn7zziXpgA", "db", "googlesheets.csv");
+  using std::string;
+
+  const string github_user_name = "coppermilk";
+  const string github_name_export_file = "github.csv";
+
+  const string googlesheets_sheet_id = "1axA_i8GiCK1V7aQCcK4O5IPsjpGNsiAayjn7zziXpgA";
+  const string googlesheets_sheet_name = "db";
+  const string googlesheets_name_export_file = "googlesheets.csv";
+
+  GitHubDataExporter::to_csv(github_user_name, github_name_export_file);
+  GoogleSheetsDataExporter::to_csv(googlesheets_sheet_id, googlesheets_sheet_name, googlesheets_name_export_file);
 
   Data data;
-  data.update_data_from_csv("googlesheets.csv");
-  data.update_data_from_csv("github.csv");
-  Board board(56, 7);
+  data.update_data_from_csv(googlesheets_name_export_file);
+  data.update_data_from_csv(github_name_export_file);
+
+  Board board(8, 7);
   ControllerBoard controller_board(&board);
 
   auto types = Data::get_activity_types(&data);
