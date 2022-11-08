@@ -6,7 +6,7 @@
 #include "Data.h"
 #include <thread>
 //sudo apt install gcc
-// sudo apt install build-essential
+// sudo apt install build-essential libboost-system-dev libboost-thread-dev libboost-program-options-dev libboost-test-dev
 // sudo apt-get install python3-dev
 int main()
 {
