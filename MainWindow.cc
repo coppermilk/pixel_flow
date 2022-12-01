@@ -3,7 +3,11 @@
 MainWindow::MainWindow(ControllerBoard *pControllerBoard, QWidget *parent)
         : QMainWindow(parent) {
     // A function that is creating the GUI.
+    
+    this->setWindowIcon(QIcon(":/new/prefix1/img/icon.ico"));
+
     ui.setupUi(this);
+    this->setWindowTitle("Pixel flow");
 
     // This is a pointer to the controller board.
     this->pControllerBoard = pControllerBoard;
@@ -28,8 +32,6 @@ MainWindow::MainWindow(ControllerBoard *pControllerBoard, QWidget *parent)
             ui.comboBoxActivityType->addItem(QString::fromStdString(type));
         }
     }
-
-
 
 
     // This is a timer that is changing the activity every time the timer is done.
@@ -141,15 +143,18 @@ void MainWindow::comboBoxActivityChanged(int index) {
         pControllerBoard->set_mode_activity(ui.comboBoxActivityType->currentText().toStdString(), min_max_pixels.first,
                                             min_max_pixels.second);
         onColorChanged();
+        BOOST_LOG_TRIVIAL(debug) << "Board change activity to \"" << ui.comboBoxActivityType->currentText().toStdString() << "\".";
+        return;
     } else {
         // This is a function that check if index in combo box exist, if not call the reset index to zero.
         if (index >= ui.comboBoxActivityType->count()) {
             index = 0;
         }
-        ui.comboBoxActivityType->setCurrentIndex(index);
-        comboBoxActivityChanged(index);
+         ui.comboBoxActivityType->setCurrentIndex(index);
+        //comboBoxActivityChanged(index);
     }
 
+    
 }
 
 void MainWindow::comboBoxTimeChanged(int index) {
@@ -179,7 +184,7 @@ void MainWindow::timeChanged() {
      * if it is, it is setting the seconds and minutes to the value in the combo box.
      */
     if (!sec && !min) {
-
+        BOOST_LOG_TRIVIAL(debug) << "Time to change value.";
         sec = ui.comboBoxTimer->currentText().toInt() % 60;
         min = ui.comboBoxTimer->currentText().toInt() / 60;
         comboBoxActivityChanged(ui.comboBoxActivityType->currentIndex() + 1);

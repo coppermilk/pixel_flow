@@ -37,12 +37,14 @@ public:
     QGroupBox *groupBox_3;
     QWidget *layoutWidget1;
     QGridLayout *gridLayout;
+    QLabel *label_10;
     QLabel *activity_type_label;
-    QComboBox *comboBoxActivityType;
     QLabel *deley_type_label;
-    QLabel *minutes_label;
-    QLabel *seconds_label;
+    QComboBox *comboBoxActivityType;
     QComboBox *comboBoxTimer;
+    QLabel *minutes_label;
+    QSpacerItem *horizontalSpacer;
+    QLabel *seconds_label;
     QGroupBox *groupBox;
     QLabel *label_6;
     QLabel *label_5;
@@ -75,7 +77,6 @@ public:
     QLabel *label_9;
     QSpacerItem *verticalSpacer;
     QLabel *label_pixel_board;
-    QSlider *horizontalSlider;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -84,7 +85,7 @@ public:
     {
         if (mainwindowClass->objectName().isEmpty())
             mainwindowClass->setObjectName("mainwindowClass");
-        mainwindowClass->resize(944, 704);
+        mainwindowClass->resize(714, 364);
         centralWidget = new QWidget(mainwindowClass);
         centralWidget->setObjectName("centralWidget");
         layoutWidget = new QWidget(centralWidget);
@@ -99,26 +100,36 @@ public:
         groupBox_3->setObjectName("groupBox_3");
         layoutWidget1 = new QWidget(groupBox_3);
         layoutWidget1->setObjectName("layoutWidget1");
-        layoutWidget1->setGeometry(QRect(11, 21, 201, 91));
+        layoutWidget1->setGeometry(QRect(11, 21, 201, 81));
         gridLayout = new QGridLayout(layoutWidget1);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
         gridLayout->setObjectName("gridLayout");
         gridLayout->setContentsMargins(0, 0, 0, 0);
+        label_10 = new QLabel(layoutWidget1);
+        label_10->setObjectName("label_10");
+
+        gridLayout->addWidget(label_10, 2, 0, 1, 1);
+
         activity_type_label = new QLabel(layoutWidget1);
         activity_type_label->setObjectName("activity_type_label");
 
         gridLayout->addWidget(activity_type_label, 0, 0, 1, 1);
 
-        comboBoxActivityType = new QComboBox(layoutWidget1);
-        comboBoxActivityType->setObjectName("comboBoxActivityType");
-
-        gridLayout->addWidget(comboBoxActivityType, 0, 1, 1, 2);
-
         deley_type_label = new QLabel(layoutWidget1);
         deley_type_label->setObjectName("deley_type_label");
 
         gridLayout->addWidget(deley_type_label, 1, 0, 1, 1);
+
+        comboBoxActivityType = new QComboBox(layoutWidget1);
+        comboBoxActivityType->setObjectName("comboBoxActivityType");
+
+        gridLayout->addWidget(comboBoxActivityType, 0, 1, 1, 3);
+
+        comboBoxTimer = new QComboBox(layoutWidget1);
+        comboBoxTimer->setObjectName("comboBoxTimer");
+
+        gridLayout->addWidget(comboBoxTimer, 1, 1, 1, 3);
 
         minutes_label = new QLabel(layoutWidget1);
         minutes_label->setObjectName("minutes_label");
@@ -127,15 +138,14 @@ public:
 
         gridLayout->addWidget(minutes_label, 2, 1, 1, 1);
 
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer, 2, 3, 1, 1);
+
         seconds_label = new QLabel(layoutWidget1);
         seconds_label->setObjectName("seconds_label");
 
         gridLayout->addWidget(seconds_label, 2, 2, 1, 1);
-
-        comboBoxTimer = new QComboBox(layoutWidget1);
-        comboBoxTimer->setObjectName("comboBoxTimer");
-
-        gridLayout->addWidget(comboBoxTimer, 1, 1, 1, 2);
 
 
         horizontalLayout->addWidget(groupBox_3);
@@ -284,14 +294,10 @@ public:
 
         horizontalLayout_2->addWidget(label_pixel_board);
 
-        horizontalSlider = new QSlider(centralWidget);
-        horizontalSlider->setObjectName("horizontalSlider");
-        horizontalSlider->setGeometry(QRect(170, 450, 160, 22));
-        horizontalSlider->setOrientation(Qt::Horizontal);
         mainwindowClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(mainwindowClass);
         menuBar->setObjectName("menuBar");
-        menuBar->setGeometry(QRect(0, 0, 944, 22));
+        menuBar->setGeometry(QRect(0, 0, 714, 22));
         mainwindowClass->setMenuBar(menuBar);
         mainToolBar = new QToolBar(mainwindowClass);
         mainToolBar->setObjectName("mainToolBar");
@@ -321,8 +327,9 @@ public:
     {
         mainwindowClass->setWindowTitle(QCoreApplication::translate("mainwindowClass", "mainwindow", nullptr));
         groupBox_3->setTitle(QCoreApplication::translate("mainwindowClass", "Setting", nullptr));
+        label_10->setText(QCoreApplication::translate("mainwindowClass", "Countdown", nullptr));
         activity_type_label->setText(QCoreApplication::translate("mainwindowClass", "Activity type", nullptr));
-        deley_type_label->setText(QCoreApplication::translate("mainwindowClass", "Delay", nullptr));
+        deley_type_label->setText(QCoreApplication::translate("mainwindowClass", "Delay seconds", nullptr));
         minutes_label->setText(QCoreApplication::translate("mainwindowClass", "0", nullptr));
         seconds_label->setText(QCoreApplication::translate("mainwindowClass", "0", nullptr));
         groupBox->setTitle(QCoreApplication::translate("mainwindowClass", "Min brightness", nullptr));

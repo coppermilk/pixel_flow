@@ -2,8 +2,9 @@
 #include "MainWindow.h"
 #include <QtWidgets/QApplication>
 #include <boost/algorithm/hex.hpp>
-
 #include <boost/log/trivial.hpp>
+#include <vector>
+#include <utility>
 #include "Pixel.h"
 #include "Board.h"
 #include "ControllerBoard.h"
@@ -32,15 +33,22 @@ int main(int argc, char *argv[]) {
     ControllerBoard controller_board(&board, &data);
 
     auto types = Data::get_activity_types(&data);
-    Pixel min_brithnes(14, 68, 41);
-    Pixel max_brithnes(57, 211, 83);
+    std::vector <std::pair<Pixel, Pixel>> default_min_max_brithnes;
+    default_min_max_brithnes.emplace_back(std::make_pair(Pixel(14, 68, 41), Pixel(57, 211, 83)));
+    default_min_max_brithnes.emplace_back(std::make_pair(Pixel(28,35,66), Pixel(255, 49, 87)));
+    default_min_max_brithnes.emplace_back(std::make_pair(Pixel(66, 112, 14), Pixel(213, 203, 35)));
+    default_min_max_brithnes.emplace_back(std::make_pair(Pixel(236, 236, 239), Pixel(42, 43, 89)));
 
-    for (const auto &type: types) {
-        controller_board.set_mode_activity(type, min_brithnes, max_brithnes);
-        // controller_board.set_mode_activity(data, type,min_brithnes, max_brithnes);
+    int i = 0;
+    for (const auto& type : types) {
+        if (i < default_min_max_brithnes.size()) {
+            controller_board.set_mode_activity(type, default_min_max_brithnes[i].first, default_min_max_brithnes[i].second);
+        }
+    
         board.show_in_cell_mode();
+        ++i;
     }
-
+   
 
     QApplication a(argc, argv);
     MainWindow w(&controller_board);

@@ -102,6 +102,7 @@
     <ClCompile Include="GoogleSheetsDataExporter.cc" />
     <ClCompile Include="Pixel.cc" />
     <QtRcc Include="MainWindow.qrc" />
+    <QtRcc Include="Resource.qrc" />
     <QtUic Include="MainWindow.ui" />
     <QtMoc Include="MainWindow.h" />
     <ClCompile Include="MainWindow.cc" />
@@ -114,6 +115,10 @@
     <ClInclude Include="GitHubDataExporter.h" />
     <ClInclude Include="GoogleSheetsDataExporter.h" />
     <ClInclude Include="Pixel.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="pixel_flow.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

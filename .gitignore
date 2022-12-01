@@ -1,0 +1,11 @@
+
+.vs/pixel_flow/FileContentIndex/3dc15763-412d-452c-9741-a0d1301f9650.vsidx
+*.db-wal
+*.lock
+*.db
+*.db-shm
+*.ipch
+*.bin
+*.vsidx
+*.opendb
+.vs/pixel_flow/v17/.suo
