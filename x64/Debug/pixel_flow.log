@@ -1,0 +1,5 @@
+﻿  moc MainWindow.h
+  MainWindow.cc
+  main.cpp
+  moc_MainWindow.cpp
+  pixel_flow.vcxproj -> C:\Users\user\source\repos\pixel_flow\x64\Debug\pixel_flow.exe

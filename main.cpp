@@ -1,0 +1,72 @@
+#include "python.h" // Must include BEFORE Qt!
+#include "MainWindow.h"
+#include <QtWidgets/QApplication>
+#include <boost/algorithm/hex.hpp>
+
+#include <boost/log/trivial.hpp>
+#include "Pixel.h"
+#include "Board.h"
+#include "ControllerBoard.h"
+#include "Data.h"
+#include "GitHubDataExporter.h"
+#include "GoogleSheetsDataExporter.h"
+
+int main(int argc, char *argv[]) {
+
+    using std::string;
+    const string github_user_name = "coppermilk";
+    const string github_name_export_file = "github.csv";
+
+    const string sheet_csv_link = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQBT1unt3khao9AI8hoHrLUzEv6RDlS5wnr0rzn0TxaLJD4HtuTtBAtJVBxYsc14cQsmOTvM8RwCGsA/pub?gid=0&single=true&output=csv";
+    const string googlesheets_name_export_file = "googlesheets.csv";
+
+    GitHubDataExporter::to_csv(github_user_name, github_name_export_file);
+    GoogleSheetsDataExporter::to_csv(sheet_csv_link, googlesheets_name_export_file);
+
+    Data data;
+    data.update_data_from_csv(googlesheets_name_export_file);
+    data.update_data_from_csv(github_name_export_file);
+    //std::cout <<  data.get_max_activy_score_in("github", 14 * 7);
+
+    Board board(52, 7);
+    ControllerBoard controller_board(&board, &data);
+
+    auto types = Data::get_activity_types(&data);
+    Pixel min_brithnes(14, 68, 41);
+    Pixel max_brithnes(57, 211, 83);
+
+    for (const auto &type: types) {
+        controller_board.set_mode_activity(type, min_brithnes, max_brithnes);
+        // controller_board.set_mode_activity(data, type,min_brithnes, max_brithnes);
+        board.show_in_cell_mode();
+    }
+
+
+    QApplication a(argc, argv);
+    MainWindow w(&controller_board);
+    w.show();
+    return a.exec();
+}
+
+
+/*
+ 
+    
+    BOST
+    Project -> Propertis -> C/C++  -> General -> Additional Include Directories -> (boost_1_80_0\boost_1_80_0)
+    Project -> Propertis -> Linker -> General -> Additional Library Directories -> (boost_1_80_0\boost_1_80_0)
+    Project -> Propertis -> Configuration Properties -> VC++ Directories -> Library Directories -> (boost_1_80_0\boost_1_80_0\stage\lib)
+
+    Qt
+    To show console
+    Go to Project Properties > Linker > System : set SubSystem to "SUBSYSTEM:CONSOLE"
+
+    PYTHOH
+    Project -> Propertis -> Configuration Properties -> VC++ Directories -> Include Directories -> (include)
+    Project -> Propertis -> Configuration Properties -> VC++ Directories -> Library Directories -> (libs)
+*/
+
+
+
+
+
