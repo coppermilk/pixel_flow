@@ -5,6 +5,9 @@ Userspace Raspberry Pi PWM library for WS281X LEDs
 This includes WS2812 and SK6812RGB RGB LEDs
 Preliminary support is now included for SK6812RGBW LEDs (yes, RGB + W)
 
+### QT
+![alt text](https://github.com/coppermilk/pixel_flow/blob/main/img/Pixel_flow.gif)
+
 ### Background:
 
 The BCM2835 in the Raspberry Pi has a PWM module that is well suited to
