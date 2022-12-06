@@ -6,6 +6,8 @@ This includes WS2812 and SK6812RGB RGB LEDs
 Preliminary support is now included for SK6812RGBW LEDs (yes, RGB + W)
 
 ### QT
+
+Small UI program in QT to interact with LED system.
 ![alt text](https://github.com/coppermilk/pixel_flow/blob/main/img/Pixel_flow.gif)
 
 ### Background:
