@@ -1,14 +1,2 @@
-﻿  uic MainWindow.ui
-  moc MainWindow.h
-   C:\Users\user\Documents\GitHub\pixel_flow\MainWindow.ui: Warning: The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget1'.
-   C:\Users\user\Documents\GitHub\pixel_flow\MainWindow.ui: Warning: The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget2'.
-  Board.cc
-  ControllerBoard.cc
-  Data.cc
-  GitHubDataExporter.cc
-  GoogleSheetsDataExporter.cc
-  MainWindow.cc
-  Pixel.cc
-  main.cpp
-  moc_MainWindow.cpp
+﻿  MainWindow.cc
   pixel_flow.vcxproj -> C:\Users\user\Documents\GitHub\pixel_flow\x64\Debug\pixel_flow.exe

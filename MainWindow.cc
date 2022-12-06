@@ -155,7 +155,6 @@ void MainWindow::comboBoxActivityChanged(int index) {
     ui.comboBoxActivityType->setCurrentIndex(index);
     //comboBoxActivityChanged(index);
   }
-
 }
 
 void MainWindow::comboBoxTimeChanged(int index) {
@@ -194,3 +193,4 @@ void MainWindow::timeChanged() {
   ui.seconds_label->setText(QString::number(sec));
   ui.minutes_label->setText(QString::number(min) + "   :");
 }
+
